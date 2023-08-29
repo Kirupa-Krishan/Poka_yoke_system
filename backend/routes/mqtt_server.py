@@ -8,7 +8,7 @@ mqtt = Mqtt()
 def on_connect(client, userdata, flags, rc):
     mqtt.subscribe('my_topic')  # Subscribe to the MQTT topic
     print("connected to topic")
-
+    
 @mqtt.on_message()
 def on_message(client, userdata, message):
     msg = json.loads(message.payload.decode())
